@@ -66,7 +66,6 @@
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background: var(--gradient);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -74,7 +73,7 @@
   font-weight: bold;
   font-size: 2rem;
   margin: 0 auto 20px;
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
 .modal-header h2 {
@@ -87,6 +86,15 @@
 .contact-title {
   color: var(--text-light);
   font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+.contact-department {
+  color: var(--primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .modal-body {
@@ -130,6 +138,7 @@
   display: flex;
   gap: 12px;
   margin-top: 30px;
+  flex-wrap: wrap;
 }
 
 .action-btn {
@@ -145,10 +154,11 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
+  min-width: 120px;
 }
 
 .action-btn.primary {
-  background: var(--gradient);
+  background: var(--gradient-primary);
   color: white;
   box-shadow: var(--shadow);
 }
@@ -159,9 +169,19 @@
   border: 2px solid var(--border);
 }
 
+.action-btn.delete {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+  box-shadow: var(--shadow);
+}
+
 .action-btn:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
+}
+
+.action-btn.delete:hover {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
 }
 
 @media (max-width: 768px) {
@@ -182,5 +202,9 @@
   
   .modal-header h2 {
     font-size: 1.6rem;
+  }
+  
+  .action-btn {
+    min-width: auto;
   }
 }
