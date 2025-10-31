@@ -8,8 +8,8 @@ const Header = ({ totalContacts, filteredCount, viewMode, onViewModeChange }) =>
         <div className="header-main">
           <div className="header-icon">📇</div>
           <div>
-            <h1>Contact Directory</h1>
-            <p>Professional contact management system</p>
+            <h1>Contact List</h1>
+            <p>Contact management system</p>
           </div>
         </div>
         
