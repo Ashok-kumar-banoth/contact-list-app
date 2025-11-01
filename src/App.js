@@ -4,7 +4,6 @@ import ContactList from './components/ContactList/ContactList';
 import SearchBar from './components/SearchBar/SearchBar';
 import AddContactForm from './components/AddContactForm/AddContactForm';
 import ContactModal from './components/ContactModal/ContactModal';
-import Header from './components/Header/Header';
 
 function App() {
   const [contacts, setContacts] = useState([]);
@@ -219,12 +218,7 @@ function App() {
   return (
     <div className="App">
       <div className="app-container">
-        <Header 
-          totalContacts={contacts.length}
-          filteredCount={filteredContacts.length}
-          viewMode={viewMode}
-          onViewModeChange={setViewMode}
-        />
+        {/* Header section removed as requested */}
         
         <div className="app-controls">
           <SearchBar 
