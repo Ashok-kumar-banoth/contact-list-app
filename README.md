@@ -1,7 +1,7 @@
 # Contact List App
 
 ## 🌟 Live Demo
-https://vercel.com/ashok-kumar-banoths-projects/contact-list-app
+https://contact-list-app-brown.vercel.app/
 
 ## ✨ Features
 - View all contacts in beautiful grid layout
