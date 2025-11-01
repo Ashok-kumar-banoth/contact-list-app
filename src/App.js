@@ -137,7 +137,7 @@ function App() {
       }, {});
   };
 
-  // Fixed search functionality - searches name, email, department, and phone numbers
+  // Enhanced search functionality - searches name, email, department, and phone numbers
   const filteredContacts = contacts.filter(contact => {
     const searchLower = searchTerm.toLowerCase().trim();
     
@@ -275,9 +275,6 @@ function App() {
             <h3>
               {searchTerm ? `No contacts found for "${searchTerm}"` : 'No contacts yet'}
             </h3>
-            <p>
-              {searchTerm ? 'Try a different search term' : 'Start by adding your first contact'}
-            </p>
             {searchTerm && (
               <button 
                 className="clear-search-btn"
