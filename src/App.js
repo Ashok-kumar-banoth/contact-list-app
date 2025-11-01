@@ -137,27 +137,37 @@ function App() {
       }, {});
   };
 
-  // Enhanced search functionality - searches name, email, department, and phone numbers
+  // Fixed search functionality - searches name, email, department, and phone numbers
   const filteredContacts = contacts.filter(contact => {
-    const searchLower = searchTerm.toLowerCase();
+    const searchLower = searchTerm.toLowerCase().trim();
     
+    if (!searchLower) return true; // Show all if search is empty
+
     // Clean phone numbers for better matching (remove non-digits)
     const phoneClean = contact.phone.replace(/\D/g, '');
     const searchClean = searchTerm.replace(/\D/g, '');
     
+    // Check name (case insensitive)
+    const nameMatch = contact.name.toLowerCase().includes(searchLower);
+    
+    // Check email (case insensitive)
+    const emailMatch = contact.email.toLowerCase().includes(searchLower);
+    
+    // Check department (case insensitive)
+    const departmentMatch = contact.department.toLowerCase().includes(searchLower);
+    
+    // Check phone number (multiple ways)
+    const phoneExactMatch = contact.phone.includes(searchTerm);
+    const phoneCleanMatch = searchClean && phoneClean.includes(searchClean);
+    const phoneCaseInsensitive = contact.phone.toLowerCase().includes(searchLower);
+    
     return (
-      // Name search
-      contact.name.toLowerCase().includes(searchLower) ||
-      // Email search  
-      contact.email.toLowerCase().includes(searchLower) ||
-      // Department search
-      contact.department.toLowerCase().includes(searchLower) ||
-      // Phone number exact match
-      contact.phone.includes(searchTerm) ||
-      // Clean phone number match (without symbols)
-      phoneClean.includes(searchClean) ||
-      // Case insensitive phone search
-      contact.phone.toLowerCase().includes(searchLower)
+      nameMatch ||
+      emailMatch ||
+      departmentMatch ||
+      phoneExactMatch ||
+      phoneCleanMatch ||
+      phoneCaseInsensitive
     );
   });
 
