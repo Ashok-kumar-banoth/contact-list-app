@@ -6,7 +6,7 @@
 
 .search-input {
   width: 100%;
-  padding: 18px 60px 18px 24px;
+  padding: 18px 60px 18px 50px; /* Increased left padding from 24px to 50px */
   border: 2px solid var(--border);
   border-radius: 14px;
   font-size: 16px;
@@ -61,4 +61,18 @@
 .clear-search:hover {
   transform: translateY(-50%) scale(1.1);
   box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+}
+
+@media (max-width: 768px) {
+  .search-input {
+    padding: 16px 50px 16px 45px; /* Adjusted for mobile */
+  }
+  
+  .search-icon {
+    left: 16px;
+  }
+  
+  .clear-search {
+    right: 14px;
+  }
 }
