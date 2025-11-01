@@ -29,11 +29,11 @@ const ContactList = ({ contacts, onContactClick, viewMode }) => {
             </div>
           )
         ) : (
-          // <div className="no-contacts">
-          //   {/* <div className="no-contacts-icon">👥</div> */}
-          //   {/* <h3>No contacts found</h3>
-          //   <p>Try adjusting your search or add new contacts</p> */}
-          // </div>
+          <div className="no-contacts">
+            {/* <div className="no-contacts-icon">👥</div> */}
+            {/* <h3>No contacts found</h3>
+            <p>Try adjusting your search or add new contacts</p> */}
+          </div>
         )}
       </div>
     </div>
