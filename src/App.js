@@ -137,11 +137,29 @@ function App() {
       }, {});
   };
 
-  const filteredContacts = contacts.filter(contact =>
-    contact.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    contact.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    contact.department.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  // Enhanced search functionality - searches name, email, department, and phone numbers
+  const filteredContacts = contacts.filter(contact => {
+    const searchLower = searchTerm.toLowerCase();
+    
+    // Clean phone numbers for better matching (remove non-digits)
+    const phoneClean = contact.phone.replace(/\D/g, '');
+    const searchClean = searchTerm.replace(/\D/g, '');
+    
+    return (
+      // Name search
+      contact.name.toLowerCase().includes(searchLower) ||
+      // Email search  
+      contact.email.toLowerCase().includes(searchLower) ||
+      // Department search
+      contact.department.toLowerCase().includes(searchLower) ||
+      // Phone number exact match
+      contact.phone.includes(searchTerm) ||
+      // Clean phone number match (without symbols)
+      phoneClean.includes(searchClean) ||
+      // Case insensitive phone search
+      contact.phone.toLowerCase().includes(searchLower)
+    );
+  });
 
   const groupedContacts = groupContactsByLetter(filteredContacts);
 
