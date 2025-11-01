@@ -7,7 +7,7 @@ const SearchBar = ({ searchTerm, onSearchChange }) => {
       <div className="search-icon">🔍</div>
       <input
         type="text"
-        placeholder="Search contacts by name..."
+        placeholder="Search by name, email, phone, or department..."
         value={searchTerm}
         onChange={(e) => onSearchChange(e.target.value)}
         className="search-input"
