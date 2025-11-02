@@ -1,0 +1,97 @@
+.alphabet-sidebar {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  border-radius: 12px;
+  padding: 15px 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border);
+  z-index: 100;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.sidebar-title {
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.letters-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.letter-button {
+  background: none;
+  border: none;
+  color: var(--text-light);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  text-align: center;
+  min-width: 30px;
+}
+
+.letter-button:hover {
+  background: var(--primary-light);
+  color: var(--primary);
+  transform: scale(1.1);
+}
+
+.letter-button:active {
+  transform: scale(0.95);
+}
+
+/* Scrollbar styling */
+.alphabet-sidebar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.alphabet-sidebar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.alphabet-sidebar::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+}
+
+.alphabet-sidebar::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
+
+@media (max-width: 768px) {
+  .alphabet-sidebar {
+    position: static;
+    transform: none;
+    max-height: 120px;
+    margin: 20px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .letters-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+  }
+  
+  .letter-button {
+    padding: 4px 8px;
+    font-size: 0.8rem;
+  }
+}

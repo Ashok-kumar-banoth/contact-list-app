@@ -5,6 +5,7 @@ import SearchBar from './components/SearchBar/SearchBar';
 import AddContactForm from './components/AddContactForm/AddContactForm';
 import ContactModal from './components/ContactModal/ContactModal';
 import Header from './components/Header/Header';
+import AlphabetSidebar from './components/AlphabetSidebar/AlphabetSidebar';
 
 function App() {
   const [contacts, setContacts] = useState([]);
@@ -13,6 +14,7 @@ function App() {
   const [selectedContact, setSelectedContact] = useState(null);
   const [viewMode, setViewMode] = useState('grid');
   const [searchAnimation, setSearchAnimation] = useState('');
+  const [scrollToLetter, setScrollToLetter] = useState('');
 
   // Load contacts from localStorage on component mount
   useEffect(() => {
@@ -212,6 +214,10 @@ function App() {
     setSelectedContact(contact);
   };
 
+  const handleLetterClick = (letter) => {
+    setScrollToLetter(letter);
+  };
+
   const closeModal = () => {
     setSelectedContact(null);
   };
@@ -265,7 +271,16 @@ function App() {
           contacts={groupedContacts} 
           onContactClick={handleContactClick}
           viewMode={viewMode}
+          scrollToLetter={scrollToLetter}
         />
+
+        {/* Alphabet Sidebar - Only show when in list view and has contacts */}
+        {viewMode === 'list' && Object.keys(groupedContacts).length > 0 && (
+          <AlphabetSidebar 
+            groupedContacts={groupedContacts}
+            onLetterClick={handleLetterClick}
+          />
+        )}
         
         {Object.keys(groupedContacts).length === 0 && (
           <div className="empty-state">

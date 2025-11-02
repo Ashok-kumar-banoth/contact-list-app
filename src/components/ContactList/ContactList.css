@@ -48,4 +48,7 @@
   .contact-list-header h2 {
     font-size: 1.5rem;
   }
+  .contact-group-wrapper {
+  scroll-margin-top: 20px; /* Space from top when scrolling to section */
+  }
 }
