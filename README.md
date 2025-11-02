@@ -1,10 +1,10 @@
 # Contact List App
 
 ## 🌟 Live Demo
-https://contact-list-app-brown.vercel.app/
+Link: https://contact-list-app-brown.vercel.app/
 
 ## ✨ Features
-- View all contacts in beautiful grid layout
+- View all contacts in beautiful grid and List layout
 - Real-time search with smart animations
 - Add new contacts with validation
 - Professional animations and hover effects
