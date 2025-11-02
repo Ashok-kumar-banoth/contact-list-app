@@ -10,12 +10,12 @@ const AddContactForm = ({ onAddContact, onCancel }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Only require name and phone, email is optional
+    
     if (formData.name && formData.phone) {
       onAddContact(formData);
       setFormData({ name: '', email: '', phone: '' });
     } else {
-      // Show alert if required fields are missing
+      
       if (!formData.name) {
         alert('Name is required');
       } else if (!formData.phone) {
@@ -57,7 +57,7 @@ const AddContactForm = ({ onAddContact, onCancel }) => {
               placeholder="Enter email address (optional)"
               value={formData.email}
               onChange={handleChange}
-              // Removed required attribute to make it optional
+              
             />
           </div>
           <div className="form-group">

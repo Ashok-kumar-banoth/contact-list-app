@@ -7,7 +7,7 @@ const ContactList = ({ contacts, onContactClick, viewMode, scrollToLetter }) => 
   const groupRefs = useRef({});
   const totalContacts = Object.values(contacts).flat().length;
 
-  // Scroll to letter when scrollToLetter changes
+  
   useEffect(() => {
     if (scrollToLetter && groupRefs.current[scrollToLetter]) {
       groupRefs.current[scrollToLetter].scrollIntoView({
